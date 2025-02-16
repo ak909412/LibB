@@ -86,32 +86,32 @@ Open `index.html` in a browser.
 - New users can register with their name, registration number, school details, and password.
 - Ensures data validation before account creation.
 
-📌 *<img width="332" alt="image" src="https://github.com/user-attachments/assets/14d49317-c74c-4cd2-8f7d-ba5016e7bb76" />
-*
+📌 <img width="400" alt="image" src="https://github.com/user-attachments/assets/14d49317-c74c-4cd2-8f7d-ba5016e7bb76" />
+
 
 ### 🏠 Home Page
 **Description:**
 - Displays key features and navigation options.
 - Provides buttons to book, modify reservations, and view system insights.
 
-📌 *<img width="353" alt="image" src="https://github.com/user-attachments/assets/ec295c48-8c31-4c15-b3af-707106fe4c9c" />
-*
+📌 <img width="400" alt="image" src="https://github.com/user-attachments/assets/ec295c48-8c31-4c15-b3af-707106fe4c9c" />
+
 
 ### 📅 Reservation Page
 **Description:**
 - Shows an interactive library layout for seat selection.
 - Users can select desks, input date/time, and confirm their bookings.
 
-📌 *<img width="325" alt="image" src="https://github.com/user-attachments/assets/2bc93e28-4148-4e90-ba11-5d15bad79446" />
-*
+📌 <img width="400" alt="image" src="https://github.com/user-attachments/assets/2bc93e28-4148-4e90-ba11-5d15bad79446" />
+
 
 ### 🔄 Modify Bookings Page
 **Description:**
 - Users can view, update, or cancel existing bookings.
 - Provides an option to delete individual bookings or clear all reservations.
 
-📌 *<img width="322" alt="image" src="https://github.com/user-attachments/assets/24af809f-9127-49db-a2d5-21a50a5390eb" />
-*
+📌 <img width="400" alt="image" src="https://github.com/user-attachments/assets/24af809f-9127-49db-a2d5-21a50a5390eb" />
+
 
 ---
 
