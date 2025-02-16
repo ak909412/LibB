@@ -78,8 +78,8 @@ Open `index.html` in a browser.
 - Fields: Registration Number, Password.
 - Features: "Remember Me" checkbox and Sign-Up redirection.
 
-📌 *<img width="260" alt="image" src="https://github.com/user-attachments/assets/12882b11-8038-46a7-bda2-f9ae0c13ab93" />
-*
+📌 <img width="400" alt="image" src="https://github.com/user-attachments/assets/12882b11-8038-46a7-bda2-f9ae0c13ab93" />
+
 
 ### 📝 Signup Page
 **Description:**
