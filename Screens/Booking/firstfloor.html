@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Layout</title>
+    <link rel="stylesheet" href="bookingstyle1.css">
+    <script defer src="booking.js"></script>
+</head>
+<body>
+    <div class="taskbar">
+        <img src="X:\Desktop\SeatHub_Html\Src\darkLogo.png" alt="Logo" class="logo">
+        <button class="taskbar-btn" onclick="location.href='X:\\Desktop\\SeatHub_Html\\home.html';">Home</button>
+        <button class="taskbar-btn" onclick="location.href='X:\\Desktop\\SeatHub_Html\\Screens\\Booking\\display.html';">Modify Booking</button>
+    </div>
+    <div class="main-container">
+        <div class="wrapper">
+            <div class="sidebar">
+                <div class="dropdown">
+                    <button class="dropbtn">VIT Chennai Library</button>
+                    <div class="dropdown-content">
+                        <a href="booking.html">Ground Floor</a>
+                        <a href="firstfloor.html">First Floor</a>
+                        <a href="secondfloor.html">Second Floor</a>
+                    </div>
+                </div>
+                <div class="reservation-info">
+                    <h3>Reservation Info</h3>
+                    <p id="reservationCount">Desks Reserved: 0</p>
+                    <!-- <p id="reservedDeskNumbers">In Time: None</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Desk buttons -->
+            <div class="button" data-desk-number="30" style="top: 6.5%; left: 33.8%;"></div>
+            <div class="button" data-desk-number="1" style="top: 10.5%; left: 31.8%;"></div>
+            <div class="button" data-desk-number="2" style="top: 10.5%; left: 36%;"></div>
+            <div class="button" data-desk-number="3" style="top: 17.5%; left: 31.3%;"></div>
+            <div class="button" data-desk-number="4" style="top: 17.3%; left: 36%;"></div>
+            <div class="button" data-desk-number="5" style="top: 23.0%; left: 31%;"></div>
+            <div class="button" data-desk-number="6" style="top: 23.0%; left: 36%;"></div>
+            <div class="button" data-desk-number="7" style="top: 29%; left: 30.8%;"></div>
+            <div class="button" data-desk-number="8" style="top: 29%; left: 35.9%;"></div>
+            <div class="button" data-desk-number="9" style="top: 10.5%; left: 67%;"></div>
+            <div class="button" data-desk-number="10" style="top: 17.5%; left: 67%;"></div>
+            <div class="button" data-desk-number="11" style="top: 23%; left: 67.4%;"></div>
+            <div class="button" data-desk-number="12" style="top: 29%; left: 67.7%;"></div>
+            <div class="button" data-desk-number="13" style="top: 35%; left: 68%;"></div>
+            <div class="button" data-desk-number="14" style="top: 41%; left: 68.4%;"></div>
+            <div class="button" data-desk-number="15" style="top: 14.9%; left: 45.7%;"></div>
+            <div class="button" data-desk-number="16" style="top: 14.9%; left: 49.8%;"></div>
+            <div class="button" data-desk-number="17" style="top: 14.9%; left: 53.7%;"></div>
+            <div class="button" data-desk-number="18" style="top: 14.9%; left: 57%;"></div>
+            <div class="button" data-desk-number="19" style="top: 95%; left: 18.8%;"></div>
+            <div class="button" data-desk-number="20" style="top: 95%; left: 26%;"></div>
+            <div class="button" data-desk-number="21" style="top: 95%; left: 33%;"></div>
+            <div class="button" data-desk-number="22" style="top: 95%; left: 41.9%;"></div>
+            <div class="button" data-desk-number="23" style="top: 95%; left: 49%;"></div>
+            <div class="button" data-desk-number="24" style="top: 95%; left: 56%;"></div>
+            <div class="button" data-desk-number="25" style="top: 7.9%; left: 48%;"></div>
+            <div class="button" data-desk-number="26" style="top: 7.9%; left: 54.7%;"></div>
+            <div class="button" data-desk-number="27" style="top: 95%; left: 70.1%;"></div>
+            <div class="button" data-desk-number="28" style="top: 95%; left: 77.7%;"></div>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="form-popup" id="bookingForm">
+        <form class="form-container">
+            <h2>Book Desk</h2>
+            <label for="floor"><b>Floor</b></label>
+            <input type="text" id="floor" name="floor" value="1" readonly>
+            <label for="deskNumber"><b>Desk Number</b></label>
+            <input type="text" id="deskNumber" name="deskNumber" readonly>
+            <label for="date"><b>Date</b></label>
+            <input type="date" id="date" name="date" required>
+            <label for="timeIn"><b>Time In</b></label>
+            <input type="time" id="timeIn" name="timeIn" required>
+            <label for="timeOut"><b>Time Out</b></label>
+            <input type="time" id="timeOut" name="timeOut" required>
+            <button type="submit" class="btn">Book</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+</body>
+</html>

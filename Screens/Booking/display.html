@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View and Manage Bookings</title>
+    <link rel="stylesheet" href="viewBooking.css">
+    <style>
+        .booking-list {
+            max-height: 400px; /* Limit the height of the booking list */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-right: 15px; /* Add some space on the right for the scrollbar */
+        }
+        .booking-item {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .booking-item p {
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="taskbar">
+        <img src="X:\\Desktop\\SeatHub_Html\\Src\\darkLogo.png" alt="Logo" class="logo">
+        <button class="taskbar-btn" onclick="location.href='X:\\Desktop\\SeatHub_Html\\home.html';">Home</button>
+        <button class="taskbar-btn" onclick="location.href='X:\\Desktop\\SeatHub_Html\\Screens\\Booking\\booking.html';">Reserve</button>
+    </div>
+
+    <div class="main-container">
+        <div class="container">
+            <h1>View and Manage Bookings</h1>
+            <div id="bookingList" class="booking-list">Loading bookings...</div>
+            <button id="deleteBookingsBtn" class="delete-all-btn">Cancel All Bookings</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fetch and display bookings
+            fetch('http://localhost:3000/view-bookings')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const bookingList = document.getElementById('bookingList');
+                    if (data.length === 0) {
+                        bookingList.textContent = 'No bookings found.';
+                        return;
+                    }
+                    const list = document.createElement('ul');
+                    data.forEach(booking => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('booking-item');
+                        listItem.innerHTML = `
+                            <p>
+                                <strong>Floor:</strong> ${booking.floor}, 
+                                <strong>Desk:</strong> ${booking.deskNumber}, 
+                                <strong>Date:</strong> ${booking.date}, 
+                                <strong>Time In:</strong> ${booking.timeIn}, 
+                                <strong>Time Out:</strong> ${booking.timeOut}
+                            </p>
+                            <button onclick="deleteBooking('${booking.id}')">Delete</button>
+                        `;
+                        list.appendChild(listItem);
+                    });
+                    bookingList.innerHTML = '';
+                    bookingList.appendChild(list);
+                })
+                .catch(error => {
+                    console.error('Error fetching bookings:', error);
+                    document.getElementById('bookingList').textContent = 'Error loading bookings.';
+                });
+
+            // Delete all bookings functionality
+            document.getElementById('deleteBookingsBtn').addEventListener('click', function () {
+                fetch('http://localhost:3000/delete-bookings', {
+                    method: 'DELETE'
+                })
+                .then(response => response.text())
+                .then(message => {
+                    alert(message);
+                    document.getElementById('bookingList').textContent = 'No bookings found.';
+                })
+                .catch(error => {
+                    console.error('Error deleting bookings:', error);
+                });
+            });
+        });
+
+        // Function to delete an individual booking
+        function deleteBooking(bookingId) {
+            fetch(`http://localhost:3000/delete-booking/${bookingId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.text())
+            .then(message => {
+                alert(message);
+                location.reload(); // Refresh the page to show updated bookings
+            })
+            .catch(error => {
+                console.error('Error deleting booking:', error);
+            });
+        }
+    </script>
+</body>
+</html>
